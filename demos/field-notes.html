@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sample outdoor Shopify storefront concept for considered trail and camping gear." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Field Notes Supply — Sample Shopify Store Concept" />
+    <meta property="og:description" content="Explore a sample outdoor Shopify storefront concept for considered trail and camping gear." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+    <meta property="og:image:alt" content="Sunlit forest trail in a sample outdoor storefront concept" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#edf0e9" />
+    <title>Field Notes Supply — Sample Shopify Store Concept</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="store-demo.css" />
+  </head>
+  <body data-theme="outdoor">
+    <div class="demo-banner">Portfolio concept demo · Sample products &amp; prices · <a href="../index.html#work">Back to portfolio</a></div>
+    <header class="store-header">
+      <a class="wordmark" href="#" aria-label="Field Notes Supply home">field notes supply</a>
+      <nav class="store-nav" aria-label="Store navigation"><a href="#collection">Gear</a><a href="#story">Field journal</a><a class="cart-count" href="#collection" aria-live="polite">Bag (<span>0</span>)</a></nav>
+    </header>
+    <main class="demo-main">
+      <section class="demo-hero">
+        <div>
+          <span class="demo-kicker">Out there feels good</span>
+          <h1>Take the<br />long way.</h1>
+          <p>Considered gear for weekends outside. A small collection made for fresh air, quiet trails, and one more mile.</p>
+          <a class="demo-button" href="#collection">Explore the gear <span aria-hidden="true">→</span></a>
+        </div>
+        <img class="demo-photo" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Sunlit forest trail in a quiet outdoor landscape" fetchpriority="high" decoding="async" />
+      </section>
+      <section id="collection" aria-labelledby="collection-title">
+        <div class="product-heading"><p>Made for the outside</p><h2 id="collection-title">Pack light. Go far.</h2></div>
+        <div class="product-grid">
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Backpack for outdoor adventures" loading="lazy" decoding="async" /><div class="product-info"><h3>Daypath Pack</h3><p>Your essentials, right where you need them.</p><span class="product-price">$68.00 · Sample price</span><button class="demo-button" data-product="Daypath Pack">Add to bag</button></div></article>
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Wide mountain landscape" loading="lazy" decoding="async" /><div class="product-info"><h3>Trail Blanket</h3><p>A soft place to stop along the way.</p><span class="product-price">$54.00 · Sample price</span><button class="demo-button" data-product="Trail Blanket">Add to bag</button></div></article>
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Trail-ready everyday footwear" loading="lazy" decoding="async" /><div class="product-info"><h3>Trail Day Sneakers</h3><p>Comfortable everyday footwear for the trail and beyond.</p><span class="product-price">$29.00 · Sample price</span><button class="demo-button" data-product="Trail Day Sneakers">Add to bag</button></div></article>
+        </div>
+      </section>
+      <section class="demo-story" id="story"><div><span class="demo-kicker">Find your own way out</span><h2>Less rush. More outside.</h2><p>Field Notes Supply is a fictional outdoor-store concept. This interactive storefront preview demonstrates a possible Shopify shopping experience; products, prices and brand details are illustrative only.</p></div><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Forest trail in warm afternoon light" loading="lazy" decoding="async" /></section>
+    </main>
+    <footer class="demo-footer">Like this sample store concept? <a href="https://www.fiverr.com/alam_7979" target="_blank" rel="noopener noreferrer">Contact me on Fiverr</a> to discuss your Shopify project.</footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script>
+      let itemCount = 0;
+      let toastTimer;
+      const bagCount = document.querySelector(".cart-count span");
+      const toast = document.querySelector(".toast");
+      document.querySelectorAll("[data-product]").forEach((button) => {
+        button.addEventListener("click", () => {
+          itemCount += 1;
+          bagCount.textContent = String(itemCount);
+          toast.textContent = `${button.dataset.product} added to your sample bag.`;
+          toast.classList.add("is-visible");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2400);
+        });
+      });
+    </script>
+  </body>
+</html>

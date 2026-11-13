@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sample homewares Shopify storefront concept with a refined, editorial look." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Still House — Sample Shopify Store Concept" />
+    <meta property="og:description" content="Explore a sample homewares Shopify storefront concept with a refined, editorial look." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+    <meta property="og:image:alt" content="Warm, natural home interiors in a sample storefront concept" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f1ede5" />
+    <title>Still House — Sample Shopify Store Concept</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="store-demo.css" />
+  </head>
+  <body data-theme="home">
+    <div class="demo-banner">Portfolio concept demo · Sample products &amp; prices · <a href="../index.html#work">Back to portfolio</a></div>
+    <header class="store-header">
+      <a class="wordmark" href="#" aria-label="Still House home">still house</a>
+      <nav class="store-nav" aria-label="Store navigation"><a href="#collection">Collections</a><a href="#story">Our point of view</a><a class="cart-count" href="#collection" aria-live="polite">Bag (<span>0</span>)</a></nav>
+    </header>
+    <main class="demo-main">
+      <section class="demo-hero">
+        <div>
+          <span class="demo-kicker">Make yourself at home</span>
+          <h1>Objects for<br />slow living.</h1>
+          <p>Thoughtful pieces for softer spaces. A quieter collection of useful things you'll be glad to live with.</p>
+          <a class="demo-button" href="#collection">Shop the collection <span aria-hidden="true">→</span></a>
+        </div>
+        <img class="demo-photo" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Carefully styled living room in natural, warm tones" fetchpriority="high" decoding="async" />
+      </section>
+      <section id="collection" aria-labelledby="collection-title">
+        <div class="product-heading"><p>Keep what feels like home</p><h2 id="collection-title">A softer space</h2></div>
+        <div class="product-grid">
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Handcrafted ceramic vase" loading="lazy" decoding="async" /><div class="product-info"><h3>Sunday Vessel</h3><p>A quiet place for a few stems.</p><span class="product-price">$46.00 · Sample price</span><button class="demo-button" data-product="Sunday Vessel">Add to bag</button></div></article>
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Warm living room and considered home details" loading="lazy" decoding="async" /><div class="product-info"><h3>Slow Sunday Throw</h3><p>Soft texture for slower evenings.</p><span class="product-price">$88.00 · Sample price</span><button class="demo-button" data-product="Slow Sunday Throw">Add to bag</button></div></article>
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Minimal table lamp in a calm interior" loading="lazy" decoding="async" /><div class="product-info"><h3>Evening Light</h3><p>A warm glow for the end of the day.</p><span class="product-price">$72.00 · Sample price</span><button class="demo-button" data-product="Evening Light">Add to bag</button></div></article>
+        </div>
+      </section>
+      <section class="demo-story" id="story"><div><span class="demo-kicker">Less, but lived in</span><h2>Home is in the small things.</h2><p>Still House is a fictional homewares-store concept. This interactive storefront preview demonstrates a possible Shopify shopping experience; products, prices and brand details are illustrative only.</p></div><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Warm and inviting living space" loading="lazy" decoding="async" /></section>
+    </main>
+    <footer class="demo-footer">Like this sample store concept? <a href="https://www.fiverr.com/alam_7979" target="_blank" rel="noopener noreferrer">Contact me on Fiverr</a> to discuss your Shopify project.</footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script>
+      let itemCount = 0;
+      let toastTimer;
+      const bagCount = document.querySelector(".cart-count span");
+      const toast = document.querySelector(".toast");
+      document.querySelectorAll("[data-product]").forEach((button) => {
+        button.addEventListener("click", () => {
+          itemCount += 1;
+          bagCount.textContent = String(itemCount);
+          toast.textContent = `${button.dataset.product} added to your sample bag.`;
+          toast.classList.add("is-visible");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2400);
+        });
+      });
+    </script>
+  </body>
+</html>

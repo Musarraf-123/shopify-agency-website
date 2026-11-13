@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sample skincare Shopify storefront concept with a soft editorial design." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Soft Hour — Sample Shopify Store Concept" />
+    <meta property="og:description" content="Explore a sample skincare Shopify storefront concept with a soft, editorial design." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+    <meta property="og:image:alt" content="Skincare product in a soft, sunlit storefront concept" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f0eb" />
+    <title>Soft Hour — Sample Shopify Store Concept</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="store-demo.css" />
+  </head>
+  <body data-theme="skin">
+    <div class="demo-banner">Portfolio concept demo · Sample products &amp; prices · <a href="../index.html#work">Back to portfolio</a></div>
+    <header class="store-header">
+      <a class="wordmark" href="#" aria-label="Soft Hour home">soft hour</a>
+      <nav class="store-nav" aria-label="Store navigation"><a href="#collection">Shop</a><a href="#story">Our approach</a><a class="cart-count" href="#collection" aria-live="polite">Bag (<span>0</span>)</a></nav>
+    </header>
+    <main class="demo-main">
+      <section class="demo-hero">
+        <div>
+          <span class="demo-kicker">Slow care, lovely skin</span>
+          <h1>A softer<br />kind of ritual.</h1>
+          <p>Thoughtful skincare essentials for your everyday exhale. Simple routines, gentle textures, and a moment that is just yours.</p>
+          <a class="demo-button" href="#collection">Find your ritual <span aria-hidden="true">→</span></a>
+        </div>
+        <img class="demo-photo" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Skincare product in a soft, sunlit setting" fetchpriority="high" decoding="async" />
+      </section>
+      <section id="collection" aria-labelledby="collection-title">
+        <div class="product-heading"><p>Take what you need</p><h2 id="collection-title">A daily skin ritual</h2></div>
+        <div class="product-grid">
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Gentle skincare serum bottle" loading="lazy" decoding="async" /><div class="product-info"><h3>Cloudmilk Cleanser</h3><p>A gentle start to your everyday ritual.</p><span class="product-price">$32.00 · Sample price</span><button class="demo-button" data-product="Cloudmilk Cleanser">Add to bag</button></div></article>
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Minimal cream skincare jar" loading="lazy" decoding="async" /><div class="product-info"><h3>Soft Focus Cream</h3><p>A comfort-first daily moisturizer.</p><span class="product-price">$38.00 · Sample price</span><button class="demo-button" data-product="Soft Focus Cream">Add to bag</button></div></article>
+          <article class="product-card"><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Botanical skincare oil" loading="lazy" decoding="async" /><div class="product-info"><h3>Evening Dew Oil</h3><p>A few slow drops before you call it a day.</p><span class="product-price">$42.00 · Sample price</span><button class="demo-button" data-product="Evening Dew Oil">Add to bag</button></div></article>
+        </div>
+      </section>
+      <section class="demo-story" id="story"><div><span class="demo-kicker">Care without the noise</span><h2>Make a softer space for yourself.</h2><p>Soft Hour is a fictional skincare-store concept. This interactive storefront preview demonstrates a possible Shopify shopping experience; products, prices and brand details are illustrative only.</p></div><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Skincare bottles arranged in soft natural light" loading="lazy" decoding="async" /></section>
+    </main>
+    <footer class="demo-footer">Like this sample store concept? <a href="https://www.fiverr.com/alam_7979" target="_blank" rel="noopener noreferrer">Contact me on Fiverr</a> to discuss your Shopify project.</footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script>
+      let itemCount = 0;
+      let toastTimer;
+      const bagCount = document.querySelector(".cart-count span");
+      const toast = document.querySelector(".toast");
+      document.querySelectorAll("[data-product]").forEach((button) => {
+        button.addEventListener("click", () => {
+          itemCount += 1;
+          bagCount.textContent = String(itemCount);
+          toast.textContent = `${button.dataset.product} added to your sample bag.`;
+          toast.classList.add("is-visible");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2400);
+        });
+      });
+    </script>
+  </body>
+</html>
